@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Rotating Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="area">
+      <div class="box" ref="box">
+        <span @click="showImage($event)" style="--i: 1;">
+          <img id="1" src="./assets/image/img1.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 2;">
+          <img id="2" src="./assets/image/img2.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 3;">
+          <img id="3" src="./assets/image/img3.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 4;">
+          <img id="4" src="./assets/image/img4.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 5;">
+          <img id="5" src="./assets/image/img5.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 6;">
+          <img id="6" src="./assets/image/img6.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 7;">
+          <img id="7" src="./assets/image/img7.jpg" alt="" />
+        </span>
+        <span @click="showImage($event)" style="--i: 8;">
+          <img id="8" src="./assets/image/img8.jpg" alt="" />
+        </span>
+      </div>
+      <transition name="scale">
+        <span v-if="!show" class="showElement">
+          <button @click="closeButton" class="closeButton">X</button>
+          <button @click="previousButton($event)" ref="previousButton" class="previousButton"><</button>
+          <button @click="nextButton($event)" ref="nextButton" class="nextButton">></button>
+
+          <img :id="selectedID" :src="photoSrc" alt="" />
+          <div class="context">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eaque inventore earum modi iusto molestiae, atque corrupti, provident commodi aspernatur accusantium nobis a maiores assumenda? Iure sit doloremque velit eveniet sed dolores quo tempora, dolorum obcaecati repellendus at totam eos, voluptatem repudiandae explicabo a aut est non voluptas blanditiis laboriosam.
+            </p>
+          </div>
+        </span>
+      </transition>
+    </div>
+
+    <script src="app.js"></script>
+    
+  </body>
+</html>
