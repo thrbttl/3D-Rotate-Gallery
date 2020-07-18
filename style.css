@@ -25,10 +25,10 @@
   
   @keyframes animate {
     0% {
-      transform: perspective(1000px) rotateY(90deg);
+      transform: perspective(1000px) rotateX(90deg) rotateY(90deg);
     }
     100% {
-      transform: perspective(1000px) rotateY(720deg);
+      transform: perspective(1000px) rotateX(720deg) rotateY(720deg);
     }
   }
   
@@ -40,7 +40,7 @@
     height: 100%;
     transform-origin: center;
     transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    transform: rotateX(calc(var(--i) * 45deg)) translateZ(300px);
     overflow: hidden;
   }
   .box span img {
